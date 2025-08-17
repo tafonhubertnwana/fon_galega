@@ -1,0 +1,29 @@
+[
+  {
+    "_id": "1",
+    "title": "AI & Cloud Innovation Summit",
+    "description": "Join us for an exciting conference on the future of artificial intelligence and cloud technology.",
+    "date": "2025-09-20T10:00:00Z",
+    "location": "Douala, Cameroon",
+    "organizer": "ProfuseCC",
+    "image": "/assets/event1.jpg"
+  },
+  {
+    "_id": "2",
+    "title": "Tech Networking Meetup",
+    "description": "An evening to connect with entrepreneurs, developers, and investors in the tech industry.",
+    "date": "2025-10-05T18:00:00Z",
+    "location": "Yaoundé, Cameroon",
+    "organizer": "Tech Community Hub",
+    "image": "/assets/event2.jpg"
+  },
+  {
+    "_id": "3",
+    "title": "Startup Pitch Night",
+    "description": "Local startups pitch their ideas to potential investors and mentors.",
+    "date": "2025-11-01T15:00:00Z",
+    "location": "Buea, Cameroon",
+    "organizer": "Innovation Hub",
+    "image": "/assets/event3.jpg"
+  }
+]
