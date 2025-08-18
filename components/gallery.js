@@ -97,7 +97,7 @@ export default function Gallery({ preview = false }) {
             <Image
               src={selectedImage.src}
               alt={selectedImage.title}
-              width={1200}
+              width={800}
               height={800}
               className="w-full h-auto rounded-xl shadow-lg"
             />

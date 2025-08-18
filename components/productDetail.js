@@ -2,6 +2,7 @@
 import { motion } from "framer-motion";
 import { FaStar } from "react-icons/fa";
 import { useState } from "react";
+import Image from "next/image";
 
 export default function ProductDetail({ product }) {
   const [cart, setCart] = useState([]);
@@ -19,9 +20,11 @@ export default function ProductDetail({ product }) {
       className="max-w-4xl mx-auto bg-white rounded-2xl shadow-md p-6 mt-6"
     >
       <div className="grid md:grid-cols-2 gap-6">
-        <img
+        <Image
           src={product.image}
           alt={product.name}
+          width={200}
+          height={200}
           className="rounded-xl object-cover"
         />
         <div>

@@ -1,5 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
+import Image from "next/image";
 import Link from "next/link";
 import { FaStar } from "react-icons/fa";
 
@@ -12,9 +13,11 @@ export default function ProductCard({ product }) {
         className="bg-white rounded-sm shadow-md overflow-hidden"
       >
         <Link href={`/products/${product.id}`}>
-          <img
+          <Image
             src={product.image}
             alt={product.name}
+            width={200}
+            height={200}
             className="w-full h-48 object-cover"
           />
           <div className="p-4">
