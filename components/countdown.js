@@ -37,7 +37,7 @@ const CountdownTimer = ({ targetDate }) => {
             <div className="text-sm text-center">
               {unit.charAt(0).toUpperCase() + unit.slice(1)}
             </div>
-            <div className="text-xl flex items-center p-2 bg-[#AAAAAA] rounded-lg">
+            <div className="text-xl flex items-center p-2 bg-secondary rounded-lg">
               {String(value).padStart(2, "0")}
             </div>
           </div>

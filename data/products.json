@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "name": "Traditional Relic",
+    "price": 120,
+    "rating": 4.5,
+    "description": "This authentic traditional relic showcases the rich heritage and craftsmanship of generations past. Perfect for collectors and culture enthusiasts, it reflects timeless artistry and serves as a unique decorative piece that tells a story of tradition and legacy.",
+    "image": "/fon/product-1.png",
+    "inStock": true
+  },
+  {
+    "id": 2,
+    "name": "Traditional Relic",
+    "price": 199,
+    "rating": 4.2,
+    "description": "This authentic traditional relic showcases the rich heritage and craftsmanship of generations past. Perfect for collectors and culture enthusiasts, it reflects timeless artistry and serves as a unique decorative piece that tells a story of tradition and legacy.",
+    "image": "/fon/product-02.png",
+    "inStock": false
+  },
+  {
+    "id": 3,
+    "name": "Traditional Relic",
+    "price": 1500,
+    "rating": 4.8,
+    "description": "This authentic traditional relic showcases the rich heritage and craftsmanship of generations past. Perfect for collectors and culture enthusiasts, it reflects timeless artistry and serves as a unique decorative piece that tells a story of tradition and legacy.",
+    "image": "/fon/product-03.png",
+    "inStock": true
+  },
+  {
+    "id": 4,
+    "name": "Traditional Relic",
+    "price": 1500,
+    "rating": 4.8,
+    "description": "This authentic traditional relic showcases the rich heritage and craftsmanship of generations past. Perfect for collectors and culture enthusiasts, it reflects timeless artistry and serves as a unique decorative piece that tells a story of tradition and legacy.",
+    "image": "/fon/product-04.png",
+    "inStock": true
+  }
+]

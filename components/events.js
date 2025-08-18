@@ -68,12 +68,12 @@ const Event = () => {
 
             {/* Date and Location */}
             <div className="flex flex-wrap gap-4 mt-4">
-              <div className="p-2 sm:p-3 text-white bg-[#EF3E23] rounded-md">
+              <div className="p-2 sm:p-3 text-white bg-primary rounded-md">
                 <span className="font-semibold text-sm sm:text-base">
                   {new Date(currentEvent.date).toLocaleDateString()}
                 </span>
               </div>
-              <div className="p-2 sm:p-3 text-white bg-[#EF3E23] rounded-md flex items-center space-x-2">
+              <div className="p-2 sm:p-3 text-white bg-primary rounded-md flex items-center space-x-2">
                 <IoLocationSharp />
                 <span className="font-semibold text-sm sm:text-base">
                   {currentEvent.location}
@@ -86,7 +86,7 @@ const Event = () => {
           <div className="flex items-center mt-4">
             <Link
               href={`/events/${currentEvent._id}`}
-              className="text-[#EF3E23] font-bold rounded-md sm:text-base"
+              className="text-primary font-bold rounded-md sm:text-base"
             >
               Join With Us
             </Link>
@@ -98,15 +98,15 @@ const Event = () => {
       <div className="flex justify-end space-x-3 m-4">
         <button
           onClick={handlePrevEvent}
-          className="p-2 border border-[#EF3E23] rounded-lg"
+          className="p-2 border border-secondary rounded-lg"
         >
-          <IoIosArrowBack className="text-[#EF3E23]" size={20} />
+          <IoIosArrowBack className="text-secondary" size={20} />
         </button>
         <button
           onClick={handleNextEvent}
-          className="p-2 border border-[#EF3E23] rounded-lg"
+          className="p-2 border border-secondary rounded-lg"
         >
-          <IoIosArrowForward className="text-[#EF3E23]" size={20} />
+          <IoIosArrowForward className="text-secondary" size={20} />
         </button>
       </div>
     </div>
