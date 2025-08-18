@@ -1,5 +1,5 @@
-import products from "../../data/products.json";
-import ProductDetail from "../../components/productDetail";
+import products from "@/data/products.json";
+import ProductDetail from "@/components/productDetail";
 
 export default function ProductPage({ params }) {
   // find product by id

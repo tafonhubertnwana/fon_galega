@@ -43,7 +43,7 @@ export default function LocationSection() {
                   Location
                 </p>
               </div>
-              <h2 className="text-xl sm:text-2xl md:text-3xl text-primary font-bold leading-snug">
+              <h2 className="text-xl sm:text-2xl  text-primary font-bold leading-snug">
                 WE CARRY OUT IN <br /> FON&apos;s PALACE
               </h2>
             </motion.div>

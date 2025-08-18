@@ -10,8 +10,8 @@ import TributeCarousel from "@/components/tributeCarousel";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import LocationSection from "@/components/map";
-import products from "../data/products.json";
-import ProductCard from "../components/productCard";
+import products from "@/data/products.json";
+import ProductCard from "@/components/productCard";
 import Gallery from "@/components/gallery";
 
 export default function Home() {

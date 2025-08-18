@@ -1,5 +1,5 @@
-import products from "../data/products.json";
-import ProductCard from "../components/ProductCard";
+import products from "@/data/products.json";
+import ProductCard from "@/components/productCard";
 
 export default function ProductsPage() {
   return (
