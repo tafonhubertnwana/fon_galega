@@ -26,7 +26,7 @@ export default function FonHistory() {
         the establishment of the first Native Authority school in the Bamenda
         Grassfields and the Native Court in 1925. He was also a supporter of
         the Basel Mission, which helped popularize the Mungaka language in the
-        area. A book, "An Introduction to the Study of Bali-Nyonga," written by
+        area. A book, &quot;An Introduction to the Study of Bali-Nyonga,&quot;  written by
         various scholars, is a tribute to his reign.
       </p>
     </motion.div>
