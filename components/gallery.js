@@ -28,22 +28,25 @@ export default function Gallery({ preview = false }) {
   return (
     <section className="container mx-auto px-4 sm:px-6 py-12">
       {!preview && (
-        <h2 className="text-3xl font-bold text-center mb-4">Gallery</h2>
+        <h2 className="text-4xl font-bold text-center mb-10 tracking-tight text-gray-800">
+          Explore the Gallery
+        </h2>
       )}
 
       {/* Categories + Images */}
-      <div className="flex flex-col md:flex-row gap-6">
+      <div className="flex flex-col md:flex-row gap-8">
         {/* Categories */}
         <div className="w-full md:w-1/5 flex flex-wrap md:flex-col gap-3 justify-center md:justify-start">
           {categories.map((cat) => (
             <button
               key={cat}
               onClick={() => setSelectedCategory(cat)}
-              className={`px-4 py-2 rounded-sm text-sm font-medium transition w-auto md:w-full text-center ${
+              className={`px-4 py-2 rounded-full text-sm font-semibold transition-all duration-300 ${
                 selectedCategory === cat
-                  ? "bg-primary text-white"
-                  : "bg-secondary hover:bg-gray-300"
+                  ? "bg-gradient-to-r from-indigo-500 to-purple-500 text-white shadow-md"
+                  : "bg-gray-100 text-gray-700 hover:bg-gray-200"
               }`}
+              aria-label={`Filter by ${cat}`}
             >
               {cat}
             </button>
@@ -55,9 +58,9 @@ export default function Gallery({ preview = false }) {
           {displayedItems.map((item) => (
             <motion.div
               key={item.id}
-              whileHover={{ scale: 1.05 }}
+              whileHover={{ scale: 1.03 }}
               transition={{ type: "spring", stiffness: 200 }}
-              className="relative cursor-pointer overflow-hidden rounded-sm shadow-md"
+              className="relative group overflow-hidden rounded-lg shadow-lg cursor-pointer"
               onClick={() => setSelectedImage(item)}
             >
               <Image
@@ -65,8 +68,12 @@ export default function Gallery({ preview = false }) {
                 alt={item.title}
                 width={600}
                 height={400}
-                className="object-cover w-full h-64 transition-transform duration-500 hover:scale-110"
+                loading="lazy"
+                className="object-cover w-full h-64 transition-transform duration-500 group-hover:scale-105"
               />
+              <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                <p className="text-white text-lg font-medium">{item.title}</p>
+              </div>
             </motion.div>
           ))}
         </div>
@@ -74,10 +81,10 @@ export default function Gallery({ preview = false }) {
 
       {/* Preview Button */}
       {preview && (
-        <div className="flex justify-center mt-8">
+        <div className="flex justify-center mt-10">
           <Link
             href="/gallery"
-            className="px-6 py-3 bg-primary text-white rounded-sm shadow-md hover:bg-secondary transition"
+            className="px-6 py-3 bg-gradient-to-r from-indigo-500 to-purple-500 text-white rounded-full shadow-md hover:opacity-90 transition"
           >
             View Full Gallery
           </Link>
@@ -86,24 +93,27 @@ export default function Gallery({ preview = false }) {
 
       {/* Image Modal */}
       {selectedImage && (
-        <div className="fixed inset-0 bg-black/80 flex items-center justify-center z-50 p-4">
-          <div className="relative max-w-4xl w-full">
+        <div className="fixed inset-0 bg-black/80 backdrop-blur-sm flex items-center justify-center z-50 p-4">
+          <div className="relative max-w-5xl w-full bg-white rounded-xl overflow-hidden shadow-2xl">
             <button
               onClick={() => setSelectedImage(null)}
-              className="absolute top-4 right-4 bg-white/80 p-2 rounded-full shadow-md hover:bg-white transition"
+              className="absolute top-4 right-4 bg-gray-100 p-2 rounded-full hover:bg-gray-200 transition"
+              aria-label="Close image preview"
             >
-              <X className="w-6 h-6" />
+              <X className="w-6 h-6 text-gray-800" />
             </button>
             <Image
               src={selectedImage.src}
               alt={selectedImage.title}
-              width={800}
-              height={800}
-              className="w-full h-auto rounded-xl shadow-lg"
+              width={1000}
+              height={700}
+              className="w-full h-auto object-cover"
             />
-            <p className="text-white text-center mt-4">
-              {selectedImage.title}
-            </p>
+            <div className="p-6 text-center">
+              <h3 className="text-xl font-semibold text-gray-800">
+                {selectedImage.title}
+              </h3>
+            </div>
           </div>
         </div>
       )}
