@@ -3,14 +3,13 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-import logo from '@/public/fon/logo.png'
+import logo from "@/public/fon/logo.png";
 import {
   FaFacebookF,
   FaTwitter,
   FaLinkedinIn,
   FaInstagram,
 } from "react-icons/fa";
-import { MdEmail, MdPhone, MdLocationOn } from "react-icons/md";
 
 export default function Footer() {
   const fadeUp = {
@@ -24,24 +23,22 @@ export default function Footer() {
 
   return (
     <footer className="bg-primary text-white relative overflow-hidden">
-     
-
       {/* Main Footer */}
-      <div className="container mx-auto px-6 py-20 grid grid-cols-1 md:grid-cols-4 gap-12 relative z-10">
+      <div className="container mx-auto px-6 py-16 flex flex-col items-center text-center gap-10 relative z-10">
         {/* Brand */}
-        <motion.div
+        {/* <motion.div
           variants={fadeUp}
           initial="hidden"
           whileInView="visible"
           custom={0}
           viewport={{ once: true }}
         >
-          <Image src={logo} alt={logo} width={100} height={100} />
-          <p className="mt-4 text-sm text-white leading-relaxed">
+          <Image src={logo} alt="Company Logo" width={100} height={100} />
+          <p className="mt-4 text-sm max-w-md leading-relaxed">
             We deliver innovative solutions to help businesses grow with
             confidence.
           </p>
-        </motion.div>
+        </motion.div> */}
 
         {/* Quick Links */}
         <motion.div
@@ -51,12 +48,11 @@ export default function Footer() {
           custom={1}
           viewport={{ once: true }}
         >
-          <h3 className="text-lg font-semibold text-white">Quick Links</h3>
-          <ul className="mt-4 space-y-3 text-sm">
-            {["Home", "About", "Services", "Contact"].map((item, i) => (
+          <ul className="flex flex-wrap justify-center gap-6 text-sm font-medium">
+            {["Home", "Tribute", "Gallery"].map((item, i) => (
               <motion.li
                 key={i}
-                whileHover={{ x: 6, color: "#fff" }}
+                whileHover={{ y: -2, color: "#fff" }}
                 transition={{ type: "spring", stiffness: 200 }}
               >
                 <Link href={`/${item.toLowerCase()}`}>{item}</Link>
@@ -65,7 +61,7 @@ export default function Footer() {
           </ul>
         </motion.div>
 
-        {/* Contact */}
+        {/* Socials */}
         <motion.div
           variants={fadeUp}
           initial="hidden"
@@ -73,30 +69,8 @@ export default function Footer() {
           custom={2}
           viewport={{ once: true }}
         >
-          <h3 className="text-lg font-semibold text-white">Contact</h3>
-          <ul className="mt-4 space-y-3 text-sm">
-            <li className="flex items-center gap-2 hover:text-white transition">
-              <MdEmail size={18} /> info@yourcompany.com
-            </li>
-            <li className="flex items-center gap-2 hover:text-white transition">
-              <MdPhone size={18} /> +1 (234) 567-890
-            </li>
-            <li className="flex items-center gap-2 hover:text-white transition">
-              <MdLocationOn size={18} /> 123 Business Rd, New York, USA
-            </li>
-          </ul>
-        </motion.div>
-
-        {/* Socials */}
-        <motion.div
-          variants={fadeUp}
-          initial="hidden"
-          whileInView="visible"
-          custom={3}
-          viewport={{ once: true }}
-        >
-          <h3 className="text-lg font-semibold text-white">Follow Us</h3>
-          <div className="mt-4 flex gap-4">
+          <h3 className="text-lg font-semibold">Follow Us</h3>
+          <div className="mt-4 flex gap-4 justify-center">
             {[
               { icon: <FaLinkedinIn />, color: "hover:bg-blue-600" },
               { icon: <FaTwitter />, color: "hover:bg-sky-500" },

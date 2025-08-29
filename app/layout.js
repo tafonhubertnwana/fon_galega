@@ -3,6 +3,7 @@ import { Toaster } from "react-hot-toast";
 import "./globals.css";
 import Footer from '@/components/footer'
 import Navbar from "@/components/navbar";
+import LocationSection from "@/components/map";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -28,6 +29,7 @@ export default function RootLayout({ children }) {
         <Navbar />
         <Toaster position="top-right" reverseOrder={false} />
         <main className="pt-24">{children}</main> 
+        <LocationSection />
         <Footer />
       </body>
     </html>

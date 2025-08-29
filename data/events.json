@@ -1,47 +1,54 @@
 [
-    {
-      "_id": "1",
-      "title": "Fon Galega II Memorial Service",
-      "description": "A solemn gathering to honor the life and legacy of His Royal Majesty Fon Galega II. The event will feature tributes, cultural performances, and reflections on his contributions to the kingdom.",
-      "date": "2025-09-20T10:00:00Z",
-      "location": "Bali Nyonga Palace, Cameroon",
-      "organizer": "Bali Nyonga Royal Family",
-      "image": "/fon/fon-11.jpeg"
-    },
-    {
-      "_id": "2",
-      "title": "Galega II Cultural Heritage Festival",
-      "description": "A vibrant celebration of the traditions, dances, and customs preserved under Fon Galega II’s reign. Features traditional music, storytelling, and artisan exhibitions.",
-      "date": "2025-10-05T09:00:00Z",
-      "location": "Bali Nyonga Cultural Grounds, Cameroon",
-      "organizer": "Bali Nyonga Cultural Council",
-      "image": "/fon/fon-11.jpeg"
-    },
-    {
-      "_id": "3",
-      "title": "Fon Galega II Legacy Lectures",
-      "description": "Scholars and historians discuss Fon Galega II’s leadership, his role in preserving Bali Nyonga heritage, and his impact on modern governance.",
-      "date": "2025-11-15T14:00:00Z",
-      "location": "University of Bamenda, Cameroon",
-      "organizer": "Department of African History",
-      "image": "/fon/fon-11.jpeg"
-    },
-    {
-      "_id": "4",
-      "title": "Fon Galega II Green Initiative",
-      "description": "A community tree-planting event in memory of Fon Galega II’s commitment to environmental conservation. Volunteers will plant native trees across Bali Nyonga.",
-      "date": "2026-01-12T08:00:00Z",
-      "location": "Bali Nyonga Eco-Park, Cameroon",
-      "organizer": "Bali Nyonga Environmental Society",
-      "image": "/fon/fon-11.jpeg"
-    },
-    {
-      "_id": "5",
-      "title": "Fon Galega II Unity Cup",
-      "description": "A football tournament promoting youth unity and sportsmanship in honor of Fon Galega II, who supported community development through sports.",
-      "date": "2026-03-20T10:00:00Z",
-      "location": "Bali Nyonga Community Stadium, Cameroon",
-      "organizer": "Bali Nyonga Youth Association",
-      "image": "/fon/fon-11.jpeg"
-    }
-  ]
+{
+"_id": "1",
+"title": "Fon Galega II Memorial Service",
+"description": "A solemn gathering to honor the life and legacy of His Royal Majesty Fon Galega II. The event will feature tributes, cultural performances, and reflections on his contributions to the kingdom.",
+"date": "2026-09-20T10:00:00Z",
+"location": "Bali Nyonga Palace, Cameroon",
+"organizer": "Bali Nyonga Royal Family",
+"image": "/fon/fon-11.jpeg",
+"schedule": [
+{ "time": "09:00", "title": "Arrival & Registration", "description": "Guest arrival, seating, and welcome reception." },
+{ "time": "10:00", "title": "Opening Prayers & Anthem", "description": "Multi-faith prayers and the national anthem." },
+{ "time": "10:30", "title": "Tributes & Reflections", "description": "Family members and dignitaries share memories." },
+{ "time": "12:00", "title": "Cultural Performances", "description": "Traditional dances and musical performances." },
+{ "time": "13:00", "title": "Closing Remarks", "description": "Vote of thanks and closing procession." }
+]
+},
+{
+"_id": "2",
+"title": "Galega II Cultural Heritage Festival",
+"description": "A vibrant celebration of the traditions, dances, and customs preserved under Fon Galega II’s reign. Features traditional music, storytelling, and artisan exhibitions.",
+"date": "2025-10-05T09:00:00Z",
+"location": "Bali Nyonga Cultural Grounds, Cameroon",
+"organizer": "Bali Nyonga Cultural Council",
+"image": "/fon/fon-11.jpeg"
+},
+{
+"_id": "3",
+"title": "Fon Galega II Legacy Lectures",
+"description": "Scholars and historians discuss Fon Galega II’s leadership, his role in preserving Bali Nyonga heritage, and his impact on modern governance.",
+"date": "2025-11-15T14:00:00Z",
+"location": "University of Bamenda, Cameroon",
+"organizer": "Department of African History",
+"image": "/fon/fon-11.jpeg"
+},
+{
+"_id": "4",
+"title": "Fon Galega II Green Initiative",
+"description": "A community tree-planting event in memory of Fon Galega II’s commitment to environmental conservation. Volunteers will plant native trees across Bali Nyonga.",
+"date": "2026-01-12T08:00:00Z",
+"location": "Bali Nyonga Eco-Park, Cameroon",
+"organizer": "Bali Nyonga Environmental Society",
+"image": "/fon/fon-11.jpeg"
+},
+{
+"_id": "5",
+"title": "Fon Galega II Unity Cup",
+"description": "A football tournament promoting youth unity and sportsmanship in honor of Fon Galega II, who supported community development through sports.",
+"date": "2026-03-20T10:00:00Z",
+"location": "Bali Nyonga Community Stadium, Cameroon",
+"organizer": "Bali Nyonga Youth Association",
+"image": "/fon/fon-11.jpeg"
+}
+]

@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import bannerBg from "@/public/fon/fon-8.jpeg"; // Replace with your image path
 
-export default function HomeBanner() {
+export default function GalleryBanner() {
   return (
     <section className="relative w-full h-[400px] sm:h-[500px] md:h-[600px] overflow-hidden">
       {/* Background image */}
@@ -33,10 +33,10 @@ export default function HomeBanner() {
           "
         >
           <h1 className="text-xl sm:text-2xl md:text-4xl font-bold text-primary leading-snug">
-            CELEBRATING 40 YEARS OF FON GALEGA II OF BALI NYONGA
+            EXPLORE THE LEGACY OF FON GALEGA II
           </h1>
           <p className="mt-3 text-primary font-medium text-sm sm:text-base md:text-xl py-2 sm:py-4 md:py-6">
-            September 25, 1906 – September 18, 1985
+            A visual journey through 40 years of leadership and cultural heritage
           </p>
         </motion.div>
       </div>

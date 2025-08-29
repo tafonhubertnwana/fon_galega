@@ -8,43 +8,79 @@ import { motion } from "framer-motion";
 export default function TributePage() {
   const [tributes, setTributes] = useState([]);
   const [showForm, setShowForm] = useState(false);
+  const [loading, setLoading] = useState(true);
 
   const fetchTributes = async () => {
-    const res = await fetch("/api/tribute");
+  try {
+    setLoading(true);
+    const res = await fetch("/api/tributes", { cache: "no-store" });
     const data = await res.json();
-    setTributes(data);
-  };
+    setTributes(data.documents || []); // ✅ use documents array
+  } catch (error) {
+    console.error("Error fetching tributes:", error);
+  } finally {
+    setLoading(false);
+  }
+};
 
   useEffect(() => {
     fetchTributes();
   }, []);
 
   return (
-    <section className="container mx-auto py-12 px-6 text-center">
-      <motion.h1
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        className="text-4xl font-bold mb-8"
-      >
-        Tribute to Our Past Ruler
-      </motion.h1>
+    <div className="min-h-screen bg-gradient-to-b from-indigo-50 to-white py-12">
+      <div className="container mx-auto px-6">
+        <motion.div 
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="text-center mb-12"
+        >
+          <h1 className="text-4xl font-bold text-gray-900 mb-4">Tribute to Our Beloved Fon</h1>
+          <p className="text-gray-600 max-w-2xl mx-auto">
+            Share your memories, stories, and messages to honor the legacy of our late Fon.
+          </p>
+        </motion.div>
 
-      <button
-        onClick={() => setShowForm(!showForm)}
-        className="mb-6 bg-indigo-600 text-white py-2 px-4 rounded-xl hover:bg-indigo-700 transition"
-      >
-        {showForm ? "Hide Tribute Form" : "Write a Tribute"}
-      </button>
+        <div className="text-center mb-10">
+          <button
+            onClick={() => setShowForm(true)}
+            className="btn bg-primary btn-lg rounded-full px-8 shadow-lg hover:shadow-xl transition-all duration-300"
+          >
+            Write a Tribute
+          </button>
+        </div>
 
-      {showForm && <TributeForm onSubmit={fetchTributes} />}
-
-      <div className="mt-12">
-        {tributes.length > 0 ? (
-          <TributeCarousel tributes={tributes} />
-        ) : (
-          <p className="text-gray-500">No tributes yet. Be the first to write one!</p>
+        {/* Tribute Form Modal */}
+        {showForm && (
+          <TributeForm 
+            onClose={() => setShowForm(false)} 
+            onSubmit={fetchTributes} 
+          />
         )}
+
+        {/* Tributes Display */}
+        <div className="mt-12">
+          {loading ? (
+            <div className="flex justify-center items-center py-12">
+              <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-primary"></div>
+            </div>
+          ) : tributes.length > 0 ? (
+            <TributeCarousel tributes={tributes} />
+          ) : (
+            <div className="text-center py-12 bg-white rounded-2xl shadow-sm">
+              <div className="text-5xl mb-4">📝</div>
+              <h3 className="text-xl font-semibold text-gray-700 mb-2">No Tributes Yet</h3>
+              <p className="text-gray-500 mb-6">Be the first to share your tribute to our Fon.</p>
+              <button
+                onClick={() => setShowForm(true)}
+                className="btn bg-primary rounded-full"
+              >
+                Write First Tribute
+              </button>
+            </div>
+          )}
+        </div>
       </div>
-    </section>
+    </div>
   );
 }

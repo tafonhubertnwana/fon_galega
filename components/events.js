@@ -85,7 +85,7 @@ const Event = () => {
           {/* Join Button */}
           <div className="flex items-center mt-4">
             <Link
-              href={`/events/${currentEvent._id}`}
+              href='/'
               className="text-primary font-bold rounded-md sm:text-base"
             >
               Join With Us
