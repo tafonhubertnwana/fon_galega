@@ -6,6 +6,15 @@ const nextConfig = {
       bodySizeLimit: '10mb', // increase as needed
     },
   },
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'fra.cloud.appwrite.io',
+        pathname: '/v1/storage/buckets/**',
+      },
+    ],
+  },
 };
 
 export default nextConfig;
