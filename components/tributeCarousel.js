@@ -59,7 +59,7 @@ export default function TributeCarousel({ tributes }) {
               <div className="p-5 flex-grow flex flex-col">
                 <div className="flex-grow">
                   <p className="text-gray-700 italic mb-4 line-clamp-4">
-                    "{tribute.message}"
+                    {tribute.message}
                   </p>
                 </div>
                 

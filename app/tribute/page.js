@@ -11,17 +11,17 @@ export default function TributePage() {
   const [loading, setLoading] = useState(true);
 
   const fetchTributes = async () => {
-  try {
-    setLoading(true);
-    const res = await fetch("/api/tributes", { cache: "no-store" });
-    const data = await res.json();
-    setTributes(data.documents || []); // ✅ use documents array
-  } catch (error) {
-    console.error("Error fetching tributes:", error);
-  } finally {
-    setLoading(false);
-  }
-};
+    try {
+      setLoading(true);
+      const res = await fetch("/api/tributes");
+      const data = await res.json();
+      setTributes(data);
+    } catch (error) {
+      console.error("Error fetching tributes:", error);
+    } finally {
+      setLoading(false);
+    }
+  };
 
   useEffect(() => {
     fetchTributes();
