@@ -4,6 +4,8 @@ import { useEffect, useState } from "react";
 import TributeForm from "@/components/tributeForm";
 import TributeCarousel from "@/components/tributeCarousel";
 import { motion } from "framer-motion";
+import TributeBanner from "@/components/tributeBanner";
+
 
 export default function TributePage() {
   const [tributes, setTributes] = useState([]);
@@ -28,6 +30,8 @@ export default function TributePage() {
   }, []);
 
   return (
+    <>
+    <TributeBanner />
     <div className="min-h-screen bg-gradient-to-b from-indigo-50 to-white py-12">
       <div className="container mx-auto px-6">
         <motion.div 
@@ -35,7 +39,7 @@ export default function TributePage() {
           animate={{ opacity: 1, y: 0 }}
           className="text-center mb-12"
         >
-          <h1 className="text-4xl font-bold text-gray-900 mb-4">Tribute to Our Beloved Fon</h1>
+          <h1 className="text-4xl font-bold text-gray-900 mb-4">Tribute to Fon Galega II</h1>
           <p className="text-gray-600 max-w-2xl mx-auto">
             Share your memories, stories, and messages to honor the legacy of our late Fon.
           </p>
@@ -44,7 +48,7 @@ export default function TributePage() {
         <div className="text-center mb-10">
           <button
             onClick={() => setShowForm(true)}
-            className="btn bg-primary btn-lg rounded-full px-8 shadow-lg hover:shadow-xl transition-all duration-300"
+            className="btn bg-primary btn-lg rounded-md px-8 shadow-lg hover:shadow-xl transition-all duration-300"
           >
             Write a Tribute
           </button>
@@ -59,10 +63,10 @@ export default function TributePage() {
         )}
 
         {/* Tributes Display */}
-        <div className="mt-12">
+        <div className="mt-10">
           {loading ? (
             <div className="flex justify-center items-center py-12">
-              <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-primary"></div>
+              <div className="animate-spin rounded-md h-12 w-12 border-t-2 border-b-2 border-primary"></div>
             </div>
           ) : tributes.length > 0 ? (
             <TributeCarousel tributes={tributes} />
@@ -73,7 +77,7 @@ export default function TributePage() {
               <p className="text-gray-500 mb-6">Be the first to share your tribute to our Fon.</p>
               <button
                 onClick={() => setShowForm(true)}
-                className="btn bg-primary rounded-full"
+                className="btn bg-primary rounded-md"
               >
                 Write First Tribute
               </button>
@@ -82,5 +86,6 @@ export default function TributePage() {
         </div>
       </div>
     </div>
+    </>
   );
 }

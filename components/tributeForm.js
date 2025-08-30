@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
-
+import { toast } from "react-toastify";
 
 export default function TributeForm({ onClose, onSubmit }) {
   const [form, setForm] = useState({
@@ -16,6 +16,8 @@ export default function TributeForm({ onClose, onSubmit }) {
   const [preview, setPreview] = useState(null);
   const [file, setFile] = useState(null);
   const [loading, setLoading] = useState(false);
+    const [successMessage, setSuccessMessage] = useState(""); // ✅ Track success
+
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -93,12 +95,16 @@ export default function TributeForm({ onClose, onSubmit }) {
       });
       setFile(null);
       setPreview(null);
-
+      
+      // ✅ Show success message + toast
+      setSuccessMessage(`Thank you ${form.name}, your tribute has been submitted successfully! `);
+      toast.success("Your tribute has been submitted. Thank you! ");
       onSubmit();
       onClose();
     } catch (err) {
       console.error("Error submitting tribute:", err);
       setErrors({ submit: "Something went wrong. Please try again." });
+      toast.error("Failed to submit tribute. Please try again.");
     } finally {
       setLoading(false);
     }
@@ -119,6 +125,12 @@ export default function TributeForm({ onClose, onSubmit }) {
               &times;
             </button>
           </div>
+
+           {successMessage && (
+            <div className="p-4 bg-green-100 text-green-700 text-center font-medium">
+              {successMessage}
+            </div>
+          )}
           
           <form onSubmit={handleSubmit} className="p-6 grid grid-cols-1 md:grid-cols-2 gap-6">
             {/* Left Column - Form Fields */}

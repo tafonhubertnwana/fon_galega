@@ -4,6 +4,7 @@ import "./globals.css";
 import Footer from '@/components/footer'
 import Navbar from "@/components/navbar";
 import LocationSection from "@/components/map";
+import { toast } from "react-toastify"; // ✅ Import Toast
 
 const geistSans = Geist({
   variable: "--font-geist-sans",

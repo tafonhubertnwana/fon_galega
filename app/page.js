@@ -5,20 +5,28 @@ import HomeBanner from "@/components/homeBanner";
 import FonHistory from "@/components/fonHistory";
 import Events from "@/components/events";
 import Link from "next/link";
-import FeaturedTributes from "@/components/tributeCarousel"; // ⬅️ make sure this is imported
+import TributeCarousel from "@/components/tributeCarousel"; // ⬅️ make sure this is imported
 
 export default function Home() {
   const [tributes, setTributes] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   const fetchTributes = async () => {
-    try {
-      const res = await fetch("/api/tributes", { cache: "no-store" });
-      const data = await res.json();
-      setTributes(data.documents?.slice(0, 3) || []); // ✅ correct fix
-    } catch (error) {
-      console.error("Error fetching tributes:", error);
-    }
-  };
+      try {
+        setLoading(true);
+        const res = await fetch("/api/tributes");
+        const data = await res.json();
+        setTributes(data);
+      } catch (error) {
+        console.error("Error fetching tributes:", error);
+      } finally {
+        setLoading(false);
+      }
+    };
+  
+    useEffect(() => {
+      fetchTributes();
+    }, []);
 
   useEffect(() => {
     fetchTributes();
@@ -31,11 +39,11 @@ export default function Home() {
       <Events />
 
       {/* ✅ Tributes Section */}
-      <section className="container mx-auto px-6 py-12">
+      <section className="container mx-auto px-6 py-6">
         <h2 className="text-3xl font-bold text-center text-gray-800 mb-12">Recent Tributes</h2>
 
         {tributes.length > 0 ? (
-          <FeaturedTributes tributes={tributes} />
+          <TributeCarousel tributes={tributes} />
         ) : (
           <div className="text-center py-12">
             <p className="text-gray-500 text-lg mb-6">

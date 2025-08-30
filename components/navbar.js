@@ -2,12 +2,14 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { FaBars, FaTimes } from "react-icons/fa";
 import Image from "next/image";
 import logo from "@/public/fon/logo.png";
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const pathname = usePathname();
 
   const menuItems = [
     { label: "Home", href: "/" },
@@ -16,7 +18,7 @@ export default function Navbar() {
   ];
 
   return (
-    <nav className="bg-primary  shadow-md fixed w-full z-50">
+    <nav className="bg-primary shadow-md fixed w-full z-50">
       {/* Container */}
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="flex justify-between items-center h-24">
@@ -34,16 +36,31 @@ export default function Navbar() {
 
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center space-x-10">
-            {menuItems.map((item) => (
-              <Link
-                key={item.label}
-                href={item.href}
-                className="relative text-white font-medium hover:text-secondary transition-colors duration-200"
-              >
-                {item.label}
-                <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-secondary transition-all duration-300 group-hover:w-full"></span>
-              </Link>
-            ))}
+            {menuItems.map((item) => {
+              const isActive = pathname === item.href;
+              return (
+                <Link
+                  key={item.label}
+                  href={item.href}
+                  className={`relative font-medium transition-all duration-300 group
+                    ${
+                      isActive
+                        ? "text-secondary"
+                        : "text-white hover:text-secondary"
+                    }`}
+                >
+                  {item.label}
+                  {/* Animated underline */}
+                  <span
+                    className={`absolute left-0 -bottom-1 h-[2px] bg-secondary transition-all duration-500 ${
+                      isActive ? "w-full" : "w-0 group-hover:w-full"
+                    }`}
+                  ></span>
+                  {/* Little scale animation on hover */}
+                  <span className="absolute inset-0 scale-0 group-hover:scale-100 rounded-md bg-secondary/10 transition-transform duration-300"></span>
+                </Link>
+              );
+            })}
           </div>
 
           {/* Mobile Toggle */}
@@ -74,18 +91,32 @@ export default function Navbar() {
           </button>
         </div>
 
-        {/* Links */}
+        {/* Mobile Links */}
         <div className="flex flex-col items-center justify-center space-y-8 mt-8">
-          {menuItems.map((item) => (
-            <Link
-              key={item.label}
-              href={item.href}
-              onClick={() => setMenuOpen(false)}
-              className="text-2xl font-semibold text-gray-800 hover:text-secondary transition-colors"
-            >
-              {item.label}
-            </Link>
-          ))}
+          {menuItems.map((item) => {
+            const isActive = pathname === item.href;
+            return (
+              <Link
+                key={item.label}
+                href={item.href}
+                onClick={() => setMenuOpen(false)}
+                className={`text-2xl font-semibold transition-all duration-300 relative group
+                  ${
+                    isActive
+                      ? "text-secondary"
+                      : "text-gray-800 hover:text-secondary"
+                  }`}
+              >
+                {item.label}
+                {/* Animated underline */}
+                <span
+                  className={`absolute left-0 -bottom-1 h-[2px] bg-secondary transition-all duration-500 ${
+                    isActive ? "w-full" : "w-0 group-hover:w-full"
+                  }`}
+                ></span>
+              </Link>
+            );
+          })}
         </div>
       </div>
     </nav>
