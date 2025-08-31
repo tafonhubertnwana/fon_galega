@@ -30,7 +30,7 @@ export default function RootLayout({ children }) {
         <Navbar />
         <Toaster position="top-right" reverseOrder={false} />
         <main className="pt-24">{children}</main> 
-        <LocationSection />
+        {/* <LocationSection /> */}
         <Footer />
       </body>
     </html>

@@ -13,8 +13,8 @@ export default function Navbar() {
 
   const menuItems = [
     { label: "Home", href: "/" },
-    { label: "Tribute", href: "/tribute" },
-    { label: "Gallery", href: "/gallery" },
+    { label: "Tributes", href: "/tributes" },
+    { label: "Galleries", href: "/galleries" },
   ];
 
   return (

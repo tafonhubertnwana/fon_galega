@@ -44,7 +44,7 @@ export default function LocationSection() {
                 </p>
               </div>
               <h2 className="text-xl sm:text-2xl  text-primary font-bold leading-snug">
-                WE CARRY OUT IN <br /> FON&apos;s PALACE
+                BALI NYONGA <br /> FON&apos;s PALACE
               </h2>
             </motion.div>
           </div>
@@ -55,8 +55,8 @@ export default function LocationSection() {
           <div className="flex flex-col sm:flex-row sm:flex-wrap items-start sm:items-center gap-4 sm:gap-6 text-white text-sm">
             <div className="flex items-center gap-2">
               <Mail size={18} className="text-secondary" />
-              <Link href="mailto:profusecc2025@design.com">
-                profusecc2025@design.com
+              <Link href="mailto:fongalegaII@gmail.com">
+                fongalegaII@gmail.com
               </Link>
             </div>
             <div className="flex items-center gap-2">

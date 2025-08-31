@@ -88,7 +88,7 @@ const Event = () => {
               href='/'
               className="text-primary font-bold rounded-md sm:text-base"
             >
-              Join With Us
+              Join Us
             </Link>
           </div>
         </div>

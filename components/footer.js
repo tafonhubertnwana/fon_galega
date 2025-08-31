@@ -49,7 +49,7 @@ export default function Footer() {
           viewport={{ once: true }}
         >
           <ul className="flex flex-wrap justify-center gap-6 text-sm font-medium">
-            {["Home", "Tribute", "Gallery"].map((item, i) => (
+            {["Home", "Tributes", "Galleries"].map((item, i) => (
               <motion.li
                 key={i}
                 whileHover={{ y: -2, color: "#fff" }}
@@ -97,7 +97,7 @@ export default function Footer() {
         transition={{ delay: 0.4, duration: 0.8 }}
         className="border-t border-white text-center py-6 text-sm relative z-10"
       >
-        © {new Date().getFullYear()} YourCompany. All rights reserved.
+        © {new Date().getFullYear()} Fon Galega II. All rights reserved.
       </motion.div>
     </footer>
   );
