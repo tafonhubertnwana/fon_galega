@@ -42,7 +42,7 @@ export default function Navbar() {
                 <Link
                   key={item.label}
                   href={item.href}
-                  className={`relative font-medium transition-all duration-300 group
+                  className={`relative text-2xl font-medium transition-all duration-300 group
                     ${
                       isActive
                         ? "text-secondary"

@@ -39,8 +39,8 @@ export default function TributePage() {
           animate={{ opacity: 1, y: 0 }}
           className="text-center mb-12"
         >
-          <h1 className="text-4xl font-bold text-gray-900 mb-4">Tribute to Fon Galega II</h1>
-          <p className="text-gray-600 max-w-2xl mx-auto">
+          <h1 className="text-lg lg:text-7xl font-bold text-gray-900 mb-4">Tribute to Fon Galega II</h1>
+          <p className="text-gray-600  text-lg lg:text-4xl mx-auto">
             Share your memories, stories, and messages to honor the legacy of our late Fon.
           </p>
         </motion.div>
@@ -48,7 +48,7 @@ export default function TributePage() {
         <div className="text-center mb-10">
           <button
             onClick={() => setShowForm(true)}
-            className="btn bg-primary btn-lg rounded-md px-8 shadow-lg hover:shadow-xl transition-all duration-300"
+            className="py-4 px-20 lg:py-8 lg:px-60 bg-primary text-white text-2xl lg:text-6xl rounded-md shadow-lg hover:shadow-xl transition-all duration-300"
           >
             Write a Tribute
           </button>
