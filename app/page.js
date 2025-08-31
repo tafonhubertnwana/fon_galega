@@ -40,21 +40,39 @@ export default function Home() {
 
       {/* ✅ Tributes Section */}
       <section className="container mx-auto px-6 py-6">
-        <h2 className="text-3xl font-bold text-center text-gray-800 mb-12">Recent Tributes</h2>
+  <h2 className="text-3xl font-bold text-center text-gray-800 mb-12">
+    Recent Tributes
+  </h2>
 
-        {tributes.length > 0 ? (
-          <TributeCarousel tributes={tributes} />
-        ) : (
-          <div className="text-center py-12">
-            <p className="text-gray-500 text-lg mb-6">
-              No tributes yet. Be the first to share your memory.
-            </p>
-            <Link href="/tribute" className="px-3 py-2 border-2 border-primary rounded-sm">
-              Share Your Tribute
-            </Link>
-          </div>
-        )}
-      </section>
+  {tributes.length > 0 ? (
+    <>
+      <TributeCarousel tributes={tributes} />
+
+      {/* Always visible button under carousel */}
+      <div className="text-center mt-8">
+        <Link
+          href="/tributes"
+          className="inline-block px-4 py-2 border-2 border-primary text-primary font-medium rounded-sm hover:bg-primary hover:text-white transition"
+        >
+          Share Your Tribute
+        </Link>
+      </div>
+    </>
+  ) : (
+    <div className="text-center py-12">
+      <p className="text-gray-500 text-lg mb-6">
+        No tributes yet. Be the first to share your memory.
+      </p>
+      <Link
+        href="/tributes"
+        className="px-4 py-2 border-2 border-primary text-primary font-medium rounded-sm hover:bg-primary hover:text-white transition"
+      >
+        Share Your Tribute
+      </Link>
+    </div>
+  )}
+</section>
+
     </main>
   );
 }

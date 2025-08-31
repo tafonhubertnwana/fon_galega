@@ -4,7 +4,9 @@ import "./globals.css";
 import Footer from '@/components/footer'
 import Navbar from "@/components/navbar";
 import LocationSection from "@/components/map";
-import { toast } from "react-toastify"; // ✅ Import Toast
+import { toast } from "react-toastify"; // ✅ Import 
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -28,7 +30,7 @@ export default function RootLayout({ children }) {
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <Navbar />
-        <Toaster position="top-right" reverseOrder={false} />
+        <ToastContainer position="top-right" autoClose={3000} />
         <main className="pt-24">{children}</main> 
         {/* <LocationSection /> */}
         <Footer />

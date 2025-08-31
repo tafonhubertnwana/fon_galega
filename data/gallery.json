@@ -2,37 +2,37 @@
   {
     "id": 1,
     "src": "/fon/fon-10.jpeg",
-    "title": "Event 1",
-    "category": "Events"
+    "title": "Annual Palace Dance",
+    "category": "Traditional Ceremonies"
   },
   {
     "id": 2,
     "src": "/fon/fon-9.jpeg",
-    "title": "Nature 1",
-    "category": "Nature"
+    "title": "Sacred Forest Landscape",
+    "category": "Ancestral & Spiritual Practices"
   },
   {
     "id": 3,
     "src": "/fon/fon-6.png",
-    "title": "Architecture 1",
-    "category": "Architecture"
+    "title": "Palace Courtyard",
+    "category": "Cultural Heritage"
   },
   {
     "id": 4,
     "src": "/fon/fon-2.png",
-    "title": "People 1",
-    "category": "People"
+    "title": "Fon with Council Members",
+    "category": "Royalty & Leadership"
   },
   {
     "id": 5,
     "src": "/fon/fon-3.png",
-    "title": "Event 2",
-    "category": "Events"
+    "title": "Festival Celebration",
+    "category": "Festivals & Celebrations"
   },
   {
     "id": 6,
     "src": "/fon/fon-4.jpeg",
-    "title": "Nature 2",
-    "category": "Nature"
+    "title": "Royal Farmland",
+    "category": "Palace Life"
   }
 ]

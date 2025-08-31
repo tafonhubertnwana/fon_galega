@@ -100,7 +100,9 @@ export default function TributeForm({ onClose, onSubmit }) {
       setSuccessMessage(`Thank you ${form.name}, your tribute has been submitted successfully! `);
       toast.success("Your tribute has been submitted. Thank you! ");
       onSubmit();
-      onClose();
+      setTimeout(() => {
+  onClose();
+}, 2000);
     } catch (err) {
       console.error("Error submitting tribute:", err);
       setErrors({ submit: "Something went wrong. Please try again." });
@@ -235,10 +237,10 @@ export default function TributeForm({ onClose, onSubmit }) {
 
             {/* Form Actions */}
             <div className="md:col-span-2 flex justify-end space-x-4 pt-4 border-t border-gray-200">
-              <button type="button" onClick={onClose} className="btn btn-ghost" disabled={loading}>
+              <button type="button" onClick={onClose} className="p-3 font-semibold bg-secondary text-white" disabled={loading}>
                 Cancel
               </button>
-              <button type="submit" className="p-3 bg-primary text-white" disabled={loading}>
+              <button type="submit" className="p-3 bg-primary font-semibold text-white" disabled={loading}>
                 {loading ? <>Submitting...</> : "Submit Tribute"}
               </button>
             </div>
