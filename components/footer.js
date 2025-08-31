@@ -62,32 +62,7 @@ export default function Footer() {
         </motion.div>
 
         {/* Socials */}
-        <motion.div
-          variants={fadeUp}
-          initial="hidden"
-          whileInView="visible"
-          custom={2}
-          viewport={{ once: true }}
-        >
-          <h3 className="text-lg font-semibold">Follow Us</h3>
-          <div className="mt-4 flex gap-4 justify-center">
-            {[
-              { icon: <FaLinkedinIn />, color: "hover:bg-blue-600" },
-              { icon: <FaTwitter />, color: "hover:bg-sky-500" },
-              { icon: <FaFacebookF />, color: "hover:bg-blue-700" },
-              { icon: <FaInstagram />, color: "hover:bg-pink-500" },
-            ].map((social, i) => (
-              <motion.div
-                key={i}
-                whileHover={{ scale: 1.2, rotate: 5 }}
-                whileTap={{ scale: 0.9 }}
-                className={`p-3 rounded-full bg-secondary cursor-pointer transition ${social.color}`}
-              >
-                {social.icon}
-              </motion.div>
-            ))}
-          </div>
-        </motion.div>
+       
       </div>
 
       {/* Bottom Bar */}

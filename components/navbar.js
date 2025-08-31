@@ -5,7 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { FaBars, FaTimes } from "react-icons/fa";
 import Image from "next/image";
-import logo from "@/public/fon/logo.png";
+import logo from "@/public/fon/bg-img.jpg";
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -27,8 +27,8 @@ export default function Navbar() {
             <Image
               src={logo}
               alt="Logo"
-              width={55}
-              height={55}
+              width={100}
+              height={100}
               priority
               className="rounded-full"
             />

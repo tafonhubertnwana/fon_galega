@@ -3,7 +3,7 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
-import fonImg from "@/public/fon/fon-6.png"; // Replace with your image path
+import fonImg from "@/public/fon/log-2.jpg"; // Replace with your image path
 
 export default function FonHistory() {
   return (
@@ -42,9 +42,9 @@ export default function FonHistory() {
       <Image
         src={fonImg}
         alt="Fon Galega II"
-        width={500}
-        height={500}
-        className="shadow-lg object-cover w-full h-full max-h-[500px]"
+        width={300}
+        height={300}
+        className="shadow-lg object-cover w-full h-[600px] "
       />
     </motion.div>
   </div>
