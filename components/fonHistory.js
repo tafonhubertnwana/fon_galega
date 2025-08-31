@@ -3,7 +3,7 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
-import fonImg from "@/public/fon/log-2.jpg"; // Replace with your image path
+import fonImg from "@/public/fon/HistoryImg.jpg"; // Replace with your image path
 
 export default function FonHistory() {
   return (
