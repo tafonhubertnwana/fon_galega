@@ -21,9 +21,9 @@ export default function Navbar() {
     <nav className="bg-primary shadow-md fixed w-full z-50">
       {/* Container */}
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        <div className="flex justify-between items-center h-24">
+        <div className="flex justify-between items-center h-26">
           {/* Logo */}
-          <Link href="/" className="flex items-center">
+          <Link href="/" className="flex items-center p-4">
             <Image
               src={logo}
               alt="Logo"

@@ -48,7 +48,7 @@ export default function Gallery({ preview = false }) {
   return (
     <section className="container mx-auto px-4 sm:px-6 py-6">
       {!preview && (
-        <h2 className="text-3xl font-bold text-center mb-4">Gallery</h2>
+        <h2 className="text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-center mb-6">Gallery</h2>
       )}
 
       {/* Categories + Images */}

@@ -48,17 +48,19 @@ export default function Footer() {
           custom={1}
           viewport={{ once: true }}
         >
-          <ul className="flex flex-wrap justify-center gap-6 text-sm font-medium">
-            {["Home", "Tributes", "Galleries"].map((item, i) => (
-              <motion.li
-                key={i}
-                whileHover={{ y: -2, color: "#fff" }}
-                transition={{ type: "spring", stiffness: 200 }}
-              >
-                <Link href={`/${item.toLowerCase()}`}>{item}</Link>
-              </motion.li>
-            ))}
-          </ul>
+          <ul className="flex flex-wrap justify-center gap-6 text-sm md:text-lg xl:text-2xl font-medium">
+  {["Home", "Tributes", "Galleries"].map((item, i) => (
+    <motion.li
+      key={i}
+      whileHover={{ y: -2, color: "#fff" }}
+      transition={{ type: "spring", stiffness: 200 }}
+    >
+      <Link href={item === "Home" ? "/" : `/${item.toLowerCase()}`}>
+        {item}
+      </Link>
+    </motion.li>
+  ))}
+</ul>
         </motion.div>
 
         {/* Socials */}
